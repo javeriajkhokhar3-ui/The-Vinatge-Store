@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{name}} in {{city}}, {{state}}: antiques, jewelry, books and curiosities</title>
+  <meta name="description" content="{{name}} is an antique store at {{street}}, {{city}}, {{state}}. Furniture, jewelry, books, crystals and home décor. Call {{phone}}.">
+  <meta name="theme-color" content="#CFDACB">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{name}}, {{city}}, {{state}}">
+  <meta property="og:description" content="{{tagline}} at {{street}}, {{city}}.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/young-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/site.css">
+  <script src="/js/boot.js"></script>
+  <script type="application/ld+json"><!--JSONLD--></script>
+</head>
+<body>
+  <a class="skip" href="#collection">Skip to the collection</a>
+
+  <header class="site-header" data-header>
+    <div class="wrap bar">
+      <a class="brand" href="#top" aria-label="{{name}}, back to top">{{name}}</a>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#collection">Collection</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="callbtn" href="tel:{{phoneHref}}">Call {{phone}}</a>
+      <button class="menu" type="button" aria-expanded="false" aria-controls="nav" data-menu>Menu</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <h1 id="hero-title" class="hero__title">
+            <span class="line"><span>Antiques</span></span>
+            <span class="line"><span>with a past.</span></span>
+          </h1>
+          <p class="hero__lead" data-rise>Furniture, jewelry, books, crystals and home décor from many hands, under one roof on East Duval Street in {{city}}, {{state}}.</p>
+          <div class="hero__actions" data-rise>
+            <a class="btn" href="#collection">Browse the collection</a>
+            <a class="textlink" href="#visit">Plan your visit</a>
+          </div>
+
+          <div class="hero__visit" data-rise>
+            <div class="opensign" data-sign data-state="unknown" role="status" aria-live="polite">
+              <svg class="opensign__strings" viewBox="0 0 96 28" aria-hidden="true"><path d="M20 28 48 3l28 25" fill="none" stroke="#6F5B38" stroke-width="1.5"/><circle cx="48" cy="3" r="2.6" fill="#B88A38"/></svg>
+              <div class="opensign__plate"><span data-sign-word>Hours</span></div>
+            </div>
+            <p class="hero__where">
+              <span class="hero__status" data-sign-detail>See hours below</span>
+              {{street}}<br>{{city}}, {{state}} {{zip}}
+            </p>
+          </div>
+        </div>
+
+        <!-- The cabinet: the one memorable thing on the page. -->
+        <div class="cabinet" aria-hidden="true" data-cabinet>
+          <div class="cabinet__crown"></div>
+          <div class="cabinet__frame">
+            <div class="cabinet__back">
+              <div class="cabinet__shelf" data-depth="1">
+                <div class="piece"><div class="hang"><span class="tag">milk glass lamp</span></div><svg class="art" viewBox="0 0 160 200"><use href="/art.svg#lamp"/></svg></div>
+                <div class="piece"><div class="hang"><span class="tag">brass carriage clock</span></div><svg class="art" viewBox="0 0 160 200"><use href="/art.svg#clock"/></svg></div>
+                <div class="piece"><div class="hang"><span class="tag">cobalt glass</span></div><svg class="art" viewBox="0 0 160 200"><use href="/art.svg#vase"/></svg></div>
+                <div class="piece"><div class="hang"><span class="tag">porcelain teapot</span></div><svg class="art" viewBox="0 0 160 200"><use href="/art.svg#teapot"/></svg></div>
+              </div>
+              <div class="cabinet__shelf" data-depth="2">
+                <div class="piece"><div class="hang"><span class="tag">pocket watch</span></div><svg class="art" viewBox="0 0 160 200"><use href="/art.svg#pocketwatch"/></svg></div>
+                <div class="piece"><div class="hang"><span class="tag">cloth-bound books</span></div><svg class="art" viewBox="0 0 160 200"><use href="/art.svg#books"/></svg></div>
+                <div class="piece"><div class="hang"><span class="tag">amethyst</span></div><svg class="art" viewBox="0 0 160 200"><use href="/art.svg#amethyst"/></svg></div>
+                <div class="piece"><div class="hang"><span class="tag">brass pair</span></div><svg class="art" viewBox="0 0 160 200"><use href="/art.svg#candlesticks"/></svg></div>
+              </div>
+            </div>
+            <div class="cabinet__glass"></div>
+          </div>
+          <div class="cabinet__plinth"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTION -->
+    <section class="collection" id="collection" aria-labelledby="collection-title">
+      <div class="wrap">
+        <div class="collection__head">
+          <div>
+            <h2 id="collection-title" class="h2">From the shelves</h2>
+            <p class="collection__lead">A look at what is in the cabinets right now. Tap a tag to ask about a piece. If it is still here, we will tell you.</p>
+          </div>
+          <div class="filters" role="group" aria-label="Filter by category" data-filters></div>
+        </div>
+
+        <p class="visually-hidden" role="status" aria-live="polite" data-count></p>
+        <div class="shelves" data-shelves>
+          <p class="shelves__note" data-shelves-note>Setting out the shelves.</p>
+        </div>
+        <noscript><p class="shelves__note">The collection needs JavaScript. Call {{phone}} and we will tell you what is in.</p></noscript>
+        <p class="collection__foot">Stock changes as pieces sell and new ones arrive. Call or message if you are looking for something particular.</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="wrap about__grid">
+        <div class="about__main">
+          <h2 id="about-title" class="h2">A shop made for wandering</h2>
+          <p>{{name}} sits on East Duval Street in a retro-style building with plenty to look at inside. Furniture, jewelry, books, crystals and home décor are arranged across booths, so there is always another corner to check before you leave.</p>
+          <p>Mr. Poplin runs the shop, and visitors often mention how easy he is to work with on price. The shop is especially pretty around the holidays.</p>
+          <p>Come to browse, come to hunt for one specific thing, or come to find out what is behind the next shelf.</p>
+        </div>
+        <aside class="about__side">
+          <figure class="quote">
+            <blockquote><p>The best mix of antiques, books, jewelry and crystals</p></blockquote>
+            <figcaption>Diane I., visitor review</figcaption>
+          </figure>
+          <dl class="facts">
+            <div><dt>Payment</dt><dd>{{payment}}</dd></div>
+            <div><dt>Parking</dt><dd>{{parking}}</dd></div>
+            <div><dt>Access</dt><dd>{{accessible}}</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section class="visit" id="visit" aria-labelledby="visit-title">
+      <div class="wrap visit__grid">
+        <div class="visit__info">
+          <h2 id="visit-title" class="h2">Visit the shop</h2>
+          <address class="visit__address">
+            {{street}}<br>{{city}}, {{state}} {{zip}}
+          </address>
+          <p class="visit__phone"><a href="tel:{{phoneHref}}">{{phone}}</a></p>
+
+          <table class="hours" data-hours>
+            <caption class="visually-hidden">Opening hours</caption>
+            <tbody>
+              {{hoursRows}}
+            </tbody>
+          </table>
+          <p class="visit__note">{{hoursNote}}</p>
+
+          <div class="visit__actions">
+            <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination={{lat}},{{lng}}" target="_blank" rel="noopener">Get directions</a>
+            <a class="textlink" href="https://maps.app.goo.gl/4fLjci1b1TGAoLt49" target="_blank" rel="noopener">See photos on Google Maps</a>
+          </div>
+        </div>
+
+        <div class="mapframe">
+          <iframe title="Map showing {{name}} at {{street}}, {{city}}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q={{lat}},{{lng}}&amp;z=17&amp;output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact__grid">
+        <div class="contact__copy">
+          <h2 id="contact-title" class="h2">Looking for something particular?</h2>
+          <p>Describe it and we will watch for it, or ask whether something you saw online is still here. We reply by email or phone, whichever you leave.</p>
+          <p class="contact__call">Prefer to talk? Call <a href="tel:{{phoneHref}}">{{phone}}</a>.</p>
+        </div>
+
+        <div class="slip" data-slip>
+          <form class="slip__form" data-form novalidate>
+            <p class="slip__title">Request slip</p>
+            <div class="field">
+              <label for="c-name">Your name</label>
+              <input id="c-name" name="name" type="text" autocomplete="name" maxlength="80" required>
+              <p class="err" id="c-name-err" hidden></p>
+            </div>
+            <div class="field">
+              <label for="c-contact">Email or phone</label>
+              <input id="c-contact" name="contact" type="text" autocomplete="email" inputmode="email" maxlength="120" required>
+              <p class="err" id="c-contact-err" hidden></p>
+            </div>
+            <div class="field">
+              <label for="c-message">What are you looking for?</label>
+              <textarea id="c-message" name="message" rows="5" maxlength="1500" required></textarea>
+              <p class="err" id="c-message-err" hidden></p>
+            </div>
+            <div class="trap" aria-hidden="true"><label>Company<input name="company" type="text" tabindex="-1" autocomplete="off"></label></div>
+            <p class="err err--form" data-form-error hidden></p>
+            <button class="btn btn--paper" type="submit"><span data-label>Send request</span></button>
+          </form>
+          <div class="slip__done" data-done hidden>
+            <div class="stamp" aria-hidden="true">Received</div>
+            <p class="slip__thanks" data-thanks tabindex="-1"></p>
+            <button class="textlink" type="button" data-again>Send another request</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer__grid">
+      <div>
+        <p class="footer__name">{{name}}</p>
+        <p>{{street}}<br>{{city}}, {{state}} {{zip}}</p>
+      </div>
+      <div>
+        <p><a href="tel:{{phoneHref}}">{{phone}}</a></p>
+        <p data-footer-hours>{{hoursNote}}</p>
+      </div>
+      <div class="footer__fine">
+        <p>&copy; {{year}} {{name}}</p>
+        <p><a href="/admin">Owner sign in</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Item dialog -->
+  <dialog class="dlg" id="item-dialog" aria-labelledby="dlg-title">
+    <div class="dlg__stage" data-dlg-stage>
+      <div class="dlg__art" data-dlg-art></div>
+      <div class="dlg__plank"></div>
+    </div>
+    <div class="dlg__body">
+      <button class="dlg__close" type="button" data-dlg-close>Close</button>
+      <p class="dlg__era" data-dlg-era></p>
+      <h2 class="dlg__title" id="dlg-title" data-dlg-title></h2>
+      <p class="dlg__price" data-dlg-price></p>
+      <p class="dlg__desc" data-dlg-desc></p>
+
+      <div class="dlg__ask" data-dlg-ask>
+        <form class="slip__form slip__form--dlg" data-form novalidate>
+          <p class="slip__title">Ask about this piece</p>
+          <div class="field">
+            <label for="d-name">Your name</label>
+            <input id="d-name" name="name" type="text" autocomplete="name" maxlength="80" required>
+            <p class="err" id="d-name-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="d-contact">Email or phone</label>
+            <input id="d-contact" name="contact" type="text" autocomplete="email" inputmode="email" maxlength="120" required>
+            <p class="err" id="d-contact-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="d-message">Message</label>
+            <textarea id="d-message" name="message" rows="3" maxlength="1500" required></textarea>
+            <p class="err" id="d-message-err" hidden></p>
+          </div>
+          <div class="trap" aria-hidden="true"><label>Company<input name="company" type="text" tabindex="-1" autocomplete="off"></label></div>
+          <input type="hidden" name="itemId">
+          <p class="err err--form" data-form-error hidden></p>
+          <button class="btn btn--paper" type="submit"><span data-label>Send question</span></button>
+        </form>
+        <div class="slip__done" data-done hidden>
+          <div class="stamp" aria-hidden="true">Received</div>
+          <p class="slip__thanks" data-thanks tabindex="-1"></p>
+        </div>
+        <p class="dlg__call">Prefer to talk? Call <a href="tel:{{phoneHref}}">{{phone}}</a>.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="/js/app.js" defer></script>
+</body>
+</html>

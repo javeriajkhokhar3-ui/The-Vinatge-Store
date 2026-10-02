@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Owner sign in · The Vintage Store</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="adm">
+  <section class="adm-login" data-login hidden>
+    <form class="slip" data-login-form novalidate>
+      <p class="slip__title">Owner sign in</p>
+      <div class="field">
+        <label for="pw">Password</label>
+        <input id="pw" type="password" autocomplete="current-password" required>
+      </div>
+      <p class="err err--form" data-login-error hidden></p>
+      <button class="btn btn--paper" type="submit">Sign in</button>
+      <p class="adm-back"><a href="/">Back to the shop</a></p>
+    </form>
+  </section>
+
+  <div data-app hidden>
+    <header class="adm-bar">
+      <div class="adm-wrap adm-bar__in">
+        <strong class="adm-title">Shop manager</strong>
+        <nav class="adm-tabs" role="tablist" aria-label="Sections">
+          <button role="tab" id="tab-messages" aria-controls="panel-messages" aria-selected="true" data-tab="messages">Messages <span class="badge" data-badge hidden>0</span></button>
+          <button role="tab" id="tab-items" aria-controls="panel-items" aria-selected="false" tabindex="-1" data-tab="items">Items</button>
+          <button role="tab" id="tab-shop" aria-controls="panel-shop" aria-selected="false" tabindex="-1" data-tab="shop">Shop details</button>
+        </nav>
+        <a class="adm-link" href="/" target="_blank" rel="noopener">View site</a>
+        <button class="adm-link adm-btnlink" type="button" data-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main class="adm-wrap">
+      <p class="adm-toast" role="status" aria-live="polite" data-toast></p>
+
+      <section id="panel-messages" role="tabpanel" aria-labelledby="tab-messages" data-panel="messages">
+        <h1 class="adm-h">Messages</h1>
+        <div data-messages></div>
+      </section>
+
+      <section id="panel-items" role="tabpanel" aria-labelledby="tab-items" data-panel="items" hidden>
+        <div class="adm-head">
+          <h1 class="adm-h">Items</h1>
+          <button class="btn" type="button" data-new-item>Add an item</button>
+        </div>
+        <div data-items></div>
+      </section>
+
+      <section id="panel-shop" role="tabpanel" aria-labelledby="tab-shop" data-panel="shop" hidden>
+        <h1 class="adm-h">Shop details</h1>
+        <form class="adm-form" data-shop-form novalidate></form>
+      </section>
+    </main>
+
+    <dialog class="adm-dlg" data-item-dlg aria-labelledby="item-dlg-title">
+      <form class="adm-form" data-item-form novalidate enctype="multipart/form-data">
+        <h2 class="adm-h2" id="item-dlg-title" data-item-dlg-title>Add an item</h2>
+        <input type="hidden" name="id">
+        <div class="adm-grid">
+          <div class="field wide"><label for="i-title">Title</label><input id="i-title" name="title" maxlength="80" required><p class="err" id="i-title-err" hidden></p></div>
+          <div class="field"><label for="i-category">Category</label><select id="i-category" name="category"></select><p class="err" id="i-category-err" hidden></p></div>
+          <div class="field"><label for="i-status">Status</label><select id="i-status" name="status"></select><p class="err" id="i-status-err" hidden></p></div>
+          <div class="field"><label for="i-price">Price (USD, blank for “ask us”)</label><input id="i-price" name="price" inputmode="decimal" placeholder="45"><p class="err" id="i-price-err" hidden></p></div>
+          <div class="field"><label for="i-era">Era or note</label><input id="i-era" name="era" maxlength="40" placeholder="Mid-century"><p class="err" id="i-era-err" hidden></p></div>
+          <div class="field wide"><label for="i-description">Description</label><textarea id="i-description" name="description" rows="3" maxlength="600"></textarea><p class="err" id="i-description-err" hidden></p></div>
+          <div class="field"><label for="i-art">Illustration (used when there is no photo)</label><select id="i-art" name="art"></select><p class="err" id="i-art-err" hidden></p></div>
+          <div class="field"><label for="i-image">Photo (JPG, PNG or WebP, up to 6 MB)</label><input id="i-image" name="image" type="file" accept="image/jpeg,image/png,image/webp"><p class="err" id="i-image-err" hidden></p>
+            <label class="check" data-remove-wrap hidden><input type="checkbox" name="removeImage" value="1"> Remove current photo</label>
+            <img class="adm-thumb" data-thumb alt="" hidden></div>
+        </div>
+        <p class="err err--form" data-item-error hidden></p>
+        <div class="adm-actions">
+          <button class="btn btn--paper" type="submit">Save item</button>
+          <button class="textlink" type="button" data-item-cancel>Cancel</button>
+        </div>
+      </form>
+    </dialog>
+  </div>
+  <script src="/js/admin.js" defer></script>
+</body>
+</html>
