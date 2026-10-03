@@ -43,6 +43,7 @@
     Object.assign(meta, { categories: s.categories, art: s.art, statuses: s.statuses });
     login.hidden = true; app.hidden = false; document.title = 'Shop manager · The Vintage Store';
     setBadge(s.unhandled);
+    showStorageWarnings(s.storage);
     fillSelects();
     await Promise.all([loadMessages(), loadItems(), loadShop()]);
   }
@@ -54,6 +55,14 @@
     catch (x) { err.textContent = x.message; err.hidden = false; }
   });
   $('[data-logout]').addEventListener('click', async () => { try { await api('/logout', { method: 'POST' }); } catch (_) { /* ignore */ } showLogin(); });
+
+  function showStorageWarnings(st) {
+    const box = $('[data-warn]'); box.replaceChildren();
+    const add = (t) => { const p = el('p', '', t); box.append(p); };
+    if (!st.persistent) add('No database is connected, so this site is showing sample content and cannot save anything. Messages, items and shop details will not be kept. Connect a Postgres database (Vercel: Storage, then Neon) and redeploy.');
+    if (!st.photos) add('Photo storage is not connected, so photos cannot be uploaded yet. Connect Vercel Blob to enable them.');
+    box.hidden = !box.children.length;
+  }
 
   // ---- tabs ----
   const tabs = $$('[role="tab"]');

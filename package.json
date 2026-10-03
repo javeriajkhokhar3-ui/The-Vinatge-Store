@@ -12,13 +12,14 @@
   "license": "ISC",
   "type": "commonjs",
   "engines": {
-    "node": ">=22.13"
+    "node": "22.x"
   },
   "dependencies": {
+    "@vercel/blob": "^2.8.0",
     "compression": "^1.8.2",
     "express": "^5.2.1",
-    "express-rate-limit": "^8.7.0",
     "multer": "^2.4.0",
-    "nodemailer": "^10.0.13"
+    "nodemailer": "^10.0.13",
+    "pg": "^8.23.1"
   }
 }

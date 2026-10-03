@@ -38,6 +38,7 @@
     </header>
 
     <main class="adm-wrap">
+      <div class="adm-warn" data-warn role="alert" hidden></div>
       <p class="adm-toast" role="status" aria-live="polite" data-toast></p>
 
       <section id="panel-messages" role="tabpanel" aria-labelledby="tab-messages" data-panel="messages">
@@ -71,7 +72,7 @@
           <div class="field"><label for="i-era">Era or note</label><input id="i-era" name="era" maxlength="40" placeholder="Mid-century"><p class="err" id="i-era-err" hidden></p></div>
           <div class="field wide"><label for="i-description">Description</label><textarea id="i-description" name="description" rows="3" maxlength="600"></textarea><p class="err" id="i-description-err" hidden></p></div>
           <div class="field"><label for="i-art">Illustration (used when there is no photo)</label><select id="i-art" name="art"></select><p class="err" id="i-art-err" hidden></p></div>
-          <div class="field"><label for="i-image">Photo (JPG, PNG or WebP, up to 6 MB)</label><input id="i-image" name="image" type="file" accept="image/jpeg,image/png,image/webp"><p class="err" id="i-image-err" hidden></p>
+          <div class="field"><label for="i-image">Photo (JPG, PNG or WebP, up to 4 MB)</label><input id="i-image" name="image" type="file" accept="image/jpeg,image/png,image/webp"><p class="err" id="i-image-err" hidden></p>
             <label class="check" data-remove-wrap hidden><input type="checkbox" name="removeImage" value="1"> Remove current photo</label>
             <img class="adm-thumb" data-thumb alt="" hidden></div>
         </div>

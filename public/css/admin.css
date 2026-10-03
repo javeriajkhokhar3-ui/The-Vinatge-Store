@@ -54,3 +54,6 @@
 .adm-dlg::backdrop { background: rgba(8, 20, 16, .7); }
 .adm-dlg .adm-form { max-width: none; }
 @media (max-width: 640px) { .adm-grid { grid-template-columns: 1fr; } .hours-grid { grid-template-columns: 90px 1fr 1fr; } .hours-grid .check { grid-column: 1 / -1; } }
+
+.adm-warn { margin: 20px 0 0; padding: 14px 18px; background: #F3DFB5; border-left: 5px solid var(--stamp); border-radius: 2px; }
+.adm-warn p { margin: 0 0 6px; } .adm-warn p:last-child { margin: 0; }

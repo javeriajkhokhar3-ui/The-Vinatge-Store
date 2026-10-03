@@ -64,7 +64,7 @@ function jsonLd(shop, baseUrl) {
   return JSON.stringify(data).replace(/</g, '\\u003c');
 }
 
-const TEMPLATE_PATH = path.join(__dirname, '..', 'public', 'index.html');
+const TEMPLATE_PATH = path.join(__dirname, '..', 'views', 'index.html');
 let cached = { mtime: 0, html: '' };
 
 function template() {
